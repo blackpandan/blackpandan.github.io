@@ -1,0 +1,212 @@
+@import 'holders';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    height: 3em;
+    background-color: $back;
+    padding: 1em 0 0 0;
+
+    &__head{
+        color: $text;
+        font-size: calc(2em + 0.5vmin);
+        font-family: 'Space Mono', monospace;
+        font-weight: 700;
+
+        &-dev{
+            color: $primary;
+        }
+
+        &-dot{
+            color: $primary;
+        }
+    }
+}
+
+.main{
+    background-color: $back;
+    overflow: hidden;
+
+    width: 100%;
+    height: calc(100vh - 3em);
+    margin: 0 0 0 0;
+    display: flex;
+    align-items: center;
+    // justify-content: start;
+    flex-direction: column;
+    padding: 5vh 5vw 10vmin 5vw;
+
+    &__upper{
+        padding: 0vh 0 2vh 0;
+
+        text-align: center;
+        color: $text;
+        line-height: 2.5em;
+
+        &-head{
+            font-family: 'Space Mono', monospace;
+            font-size: 1.7em;
+            text-transform: capitalize;
+        }
+
+        &-msg{
+            font-size: 1.2em;
+        }
+    }
+
+}
+
+.wholeSvg{
+    max-width: 100%;
+    height: 65vmin;
+}
+
+@media only screen and (max-width:780px){
+    .wholeSvg{
+        height: 100%;
+    }
+}
+
+
+
+#hand{
+    animation: hand 2s linear infinite;
+    transform-origin: right;
+    transform-box: fill-box;
+}
+
+#shorty{
+    transform-origin: left;
+    transform-box: fill-box;
+    animation: shorty 2s linear infinite;
+}
+
+#eye{
+    transform-origin: left;
+    transform-box: fill-box;
+    animation: eye 2s linear infinite;
+    
+}
+
+#rightHand{
+    transform-origin: left;
+    transform-box: fill-box;
+    animation: rightHand 2s linear infinite;
+    
+}
+
+#leftHand{
+    transform-origin: right;
+    transform-box: fill-box;
+    animation: rightHand 2s linear infinite;
+}
+
+#paperHand{
+    transform-origin: right;
+    transform-box: fill-box;
+    animation: paperHand 2s linear infinite;
+}
+
+.footer{
+    position: fixed;
+    bottom: 2vmin;
+    &__links{
+
+        & a{
+          margin: 0 0 0 2vmin;
+          
+          &:hover > i{
+              color: $primary;
+          }
+        }
+        &-icon{
+            font-size: 2.2em;
+            color: $text;
+
+            
+        }
+    }
+}
+
+
+@keyframes hand{
+    0%{
+        transform: rotate(0);
+    }
+    50%{
+        transform: rotate(30deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+
+@keyframes shorty{
+    0%{
+        transform: rotate(0);
+    }
+    50%{
+        transform: translateY(-20vh);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+
+@keyframes eye{
+    0%{
+        transform: rotate(0);
+    }
+    50%{
+        transform: translateY(-20vh) rotate(30deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+
+@keyframes rightHand{
+    0%{
+        transform: translate(0) rotate(0);
+    }
+    50%{
+        transform: translateY(-20vh) rotate(-20deg);
+    }
+    100%{
+        transform: translateY(0) rotate(0);
+    }
+}
+
+@keyframes leftHand{
+    0%{
+        transform: translateY(0) rotate(0);
+    }
+    50%{
+        transform: translateY(-20vh) rotate(-20deg);
+    }
+    100%{
+        transform: translateY(0) rotate(0);
+    }
+}
+
+@keyframes paperHand{
+    0%{
+        transform: translateY(0) rotate(0) translateY(0);
+    }
+    50%{
+        transform: rotate(-10deg) translateX(14%) translateY(-4%);;
+    }
+    100%{
+        transform: translateY(0) rotate(0) translateY(0);
+    }
+}
+
